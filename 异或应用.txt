@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(void)
+{
+	int arr[] = {1,2,3,4,5,1,2,3,4};
+	int ret = 0;
+	int i = 0;
+	for(i = 0; i < sizeof(arr)/sizeof(arr[0]); i++)
+	{//^异或相同为0，不同为1，而对同一个数异或两次，
+ //相当于，与0异或。最后就只剩下单数的数与0异或
+		ret ^= arr[i];
+	}
+	printf("%d\n", ret);
+	return 0;
+ } 
